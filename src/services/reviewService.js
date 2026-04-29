@@ -14,7 +14,7 @@ export async function getReviewById(id) {
   const review = await getById(id);
   if (review) return review;
   else {
-    const error = new Error(`Review ${id} can not be found`);
+    const error = new Error(`Review ID: ${id} can not be found`);
     error.status = 404;
     throw error;
   }
@@ -28,7 +28,7 @@ export async function updateReview(id, updatedData) {
   const updatedReview = await update(id, updatedData);
   if (updatedReview) return updatedReview;
   else {
-    const error = new Error(`Review ${id} can not be found`);
+    const error = new Error(`Review ID: ${id} can not be found`);
     error.status = 404;
     throw error;
   }
@@ -38,7 +38,7 @@ export async function removeReview(id) {
   const result= await remove(id);
   if (result) return;
   else {
-    const error = new Error(`Review ${id} can not be found`);
+    const error = new Error(`Review ID: ${id} can not be found`);
     error.status = 404;
     throw error;
   }

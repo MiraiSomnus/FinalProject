@@ -352,7 +352,7 @@ paths:
           '200':
            $ref: '#/components/responses/UpdatedUser'
           '400':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/InvalidPostInput'
           '401':
             $ref: '#/components/responses/Unauthorized'
           '403':
@@ -795,7 +795,7 @@ components:
               error:
                 type: string
             example: 
-              error: 'Resource 1 not found'
+              error: 'Resource ID: 1 can not be found'
     
     InvalidId:
       description: Invalid ID

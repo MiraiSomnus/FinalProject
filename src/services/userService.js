@@ -19,7 +19,7 @@ export async function getUserById(id){
     const user = await getById(id);
     if(user) return user;
     else{
-        const error = new Error(`User ${id} cannot be found`);
+        const error = new Error(`User ID: ${id} cannot be found`);
         error.status = 404;
         throw error;
     }
@@ -66,7 +66,7 @@ export async function updateUserRole(id,role){
         return updateUserRole;
     }
     else{
-        const error = new Error(`User ${id} can not be found`);
+        const error = new Error(`User ID: ${id} can not be found`);
         error.status = 404;
         throw error;
 
