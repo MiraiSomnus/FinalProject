@@ -46,7 +46,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/Review'
         '400':
-          $ref: '#/components/responses/BadRequest'
+          $ref: '#/components/responses/InvalidPostInput'
 
     post:
       security:
@@ -170,7 +170,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/Comment'
         '400':
-          $ref: '#/components/responses/BadRequest'
+          $ref: '#/components/responses/InvalidPostInput'
         '401':
           $ref: '#/components/responses/Unauthorized'
 
@@ -386,7 +386,7 @@ paths:
       tags:
           - Films
       summary: Get all films
-      description: Retrieve of all films
+      description: Retrieves all listed films
       parameters:
         - $ref: '#/components/parameters/querySearch'
         - $ref: '#/components/parameters/querySort'
@@ -403,7 +403,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/Film'
         '400':
-          $ref: '#/components/responses/BadRequest'
+          $ref: '#/components/responses/InvalidPostInput'
         '401':
            $ref: '#/components/responses/Unauthorized'
     post:
@@ -640,10 +640,6 @@ components:
         releaseYear:
           type: integer
           example: 2023
-        adminId: 
-          type: integer
-          readOnly: true
-          example: 1
 
     UpdateReview:
       type: object
@@ -941,10 +937,7 @@ components:
               releaseYear:
                 type: integer
                 example: 2023
-              adminId: 
-                type: integer
-                readOnly: true
-                example: 1
+            
 
     UpdatedComment:
       description: Comment Updated successfully

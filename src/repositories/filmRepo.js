@@ -24,7 +24,7 @@ export async function getAll({ releaseYear,search, sortBy, order, offset, limit 
 }
 
 export async  function getById(id) {
-  const  film = await prisma.film.findUnique({where:{id} });
+  const  film = await prisma.film.findUnique({where:{id}, omit:{adminId:true}});
   return film;
 }
 
