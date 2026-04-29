@@ -6,7 +6,7 @@ info:
   description: API Documentation for Film API
 
 servers: 
-  - url: http://localhost:3000/api
+  - url: http://localhost:3000
     description: Local Server Deploynment
   - url: https://finalproject-service.onrender.com
     description: Production Server
@@ -501,7 +501,10 @@ paths:
                     type: string
                 example:
                   accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'
-
+        '400':
+          $ref: '#/components/responses/InvalidUserInput'
+        '401':
+           $ref: '#/components/responses/Unauthorized'
   /auth/signup:
     post:
       tags:
