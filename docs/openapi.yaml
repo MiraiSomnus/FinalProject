@@ -314,6 +314,26 @@ paths:
           '401':
            $ref: '#/components/responses/Unauthorized'
 
+  /users/me/reviews:
+      get:
+        security:
+          - bearerAuth: []
+        tags:
+          - Users
+        summary: Returns a user their reviews
+        description: Returns a user their reviews
+        responses:
+          '200':
+            description: User's Reviews
+            content:
+              application/json:
+                schema:
+                  type: array 
+                  items:
+                    $ref: '#/components/schemas/Review'
+          '401':
+           $ref: '#/components/responses/Unauthorized'
+
       put:
         security:
           - bearerAuth: []
