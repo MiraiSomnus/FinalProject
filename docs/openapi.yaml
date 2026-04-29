@@ -7,6 +7,9 @@ info:
 
 servers: 
   - url: http://localhost:3000/api
+    description: Local Server Deploynment
+  - url: https://finalproject-service.onrender.com
+    description: Production Server
 
 tags:
   - name: Reviews
@@ -527,7 +530,23 @@ paths:
         '409':
           $ref: '#/components/responses/DuplicateEmail'
 
-
+  /health:
+    get:
+      summary: Health Check
+      description: Returns the current status of the API. Used by Render to verify that the service is running.
+      tags:
+        - Monitoring
+      responses:
+        '200':
+          description: API is running successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
 components:
   schemas:
     Review:
