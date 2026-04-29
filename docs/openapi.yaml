@@ -335,10 +335,6 @@ paths:
             $ref: '#/components/responses/InvalidPostInput'
           '401':
             $ref: '#/components/responses/Unauthorized'
-          '403':
-            $ref: '#/components/responses/Forbidden'
-          '404':
-            $ref: '#/components/responses/NotFound'
           '409':
            $ref: '#/components/responses/DuplicateEmail'
 
@@ -356,10 +352,6 @@ paths:
             $ref: '#/components/responses/InvalidId'
           '401':
            $ref: '#/components/responses/Unauthorized'
-          '403':
-            $ref: '#/components/responses/Forbidden'
-          '404':
-            $ref: '#/components/responses/NotFound'
 
   /users/me/reviews:
       get:
