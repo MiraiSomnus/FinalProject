@@ -29,11 +29,11 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok' });
 });
 
-app.use('/api/users',userRoutes);
-app.use('/api/auth',authRoutes);
-app.use('/api/reviews', reviewRoutes);
-app.use('/api/comments',commentRoutes);
-app.use('/api/films',filmRoutes);
+app.use('/users',userRoutes);
+app.use('/auth',authRoutes);
+app.use('/reviews', reviewRoutes);
+app.use('/comments',commentRoutes);
+app.use('/films',filmRoutes);
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
