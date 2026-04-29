@@ -348,8 +348,6 @@ paths:
         responses:
           '204':
             $ref: '#/components/responses/DeletedUser'
-          '400':
-            $ref: '#/components/responses/InvalidId'
           '401':
            $ref: '#/components/responses/Unauthorized'
 
