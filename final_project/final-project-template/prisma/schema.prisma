@@ -1,0 +1,62 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User{
+  id Int @id @default(autoincrement())
+  email String @unique
+  password String
+  role Role @default(USER)
+  review Review[]
+  commment Comment[]
+  film Film[]
+  @@map("users")
+}
+
+model Review{
+  id Int @id @default(autoincrement())
+  title String 
+  content String
+  rating Int
+  createdAt DateTime @default(now()) @map("created_at") 
+  reviewer User @relation(fields: [reviewerId], references: [id], onDelete: Cascade)
+  reviewerId Int @map("user_id")
+  comments Comment[]
+  @@map("reviews")
+}
+
+model Comment{
+ id Int @id @default(autoincrement())
+ content String 
+ createdAt DateTime @default(now()) @map("created_at")
+ reviewer User @relation(fields: [reviewerId], references: [id], onDelete: Cascade)
+ reviewerId Int @map("user_id")
+ review Review @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+ reviewId Int @map("review_id")
+ @@map("comments")
+}
+
+model Film{
+  id Int @id @default(autoincrement())
+  title String 
+  genre String 
+  director String 
+  releaseYear Int
+  admin User @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  adminId Int @map("user_id")
+  @@map("films")
+}
+enum Role{
+  USER
+  ADMIN
+}
