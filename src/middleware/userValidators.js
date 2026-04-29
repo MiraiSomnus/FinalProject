@@ -19,7 +19,7 @@ body('email')
  .trim()
  .escape()
  .isLength({min:8, max:64})
- .withMessage('A minimum of 8 characters are required'),
+  .withMessage('Password must have a minimum of 8 characters'),
 
 body('role')
  .optional()
