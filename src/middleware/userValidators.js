@@ -47,15 +47,7 @@ export const validateLogin= [
 ];
 
 export const validateUpdateUser =[
-    oneOf([
-        body('email').exists({values: 'falsy'}),
-        body('password').exists({values: 'falsy'})
-    ],{
-        message: 'At least one field (email,password) must be required'
-    }
-
-),
-
+   
 body('email')
  .optional()
  .trim()
