@@ -25,6 +25,10 @@ process.exit(1);
 }
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+
 app.use('/api/users',userRoutes);
 app.use('/api/auth',authRoutes);
 app.use('/api/reviews', reviewRoutes);
