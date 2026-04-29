@@ -23,27 +23,27 @@ export const validateCreateFilm = [
 
   body('genre')
     .exists({ values: 'falsy' })
-    .withMessage('genre is required')
+    .withMessage('Genre is required')
     .bail()
     .trim()
     .escape()
     .isString()
-    .withMessage('genre must be a string')
+    .withMessage('Genre must be a string')
     .bail()
     .isLength({ min: 3 })
     .withMessage('Genre must be at least 3 characters'),
 
     body('director')
     .exists({ values: 'falsy' })
-    .withMessage('director is required')
+    .withMessage('Director is required')
     .bail()
     .trim()
     .escape()
     .isString()
-    .withMessage('director must be a string')
+    .withMessage('Director must be a string')
     .bail()
     .isLength({ min: 5 })
-    .withMessage('director must be at least 5 characters'),
+    .withMessage('Director must be at least 5 characters'),
 
     body('releaseYear')
     .exists({ values: 'falsy' })

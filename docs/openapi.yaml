@@ -447,7 +447,7 @@ paths:
         - $ref: '#/components/parameters/ResourceId'
       responses: 
         '200':
-          description: A single review
+          description: A single film
           content:
             application/json:
               schema:
