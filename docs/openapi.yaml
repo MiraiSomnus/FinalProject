@@ -45,6 +45,8 @@ paths:
                 type: array 
                 items:
                   $ref: '#/components/schemas/Review'
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
     post:
       security:
@@ -167,6 +169,10 @@ paths:
                 type: array 
                 items:
                   $ref: '#/components/schemas/Comment'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
 
     post:
       security:
@@ -376,6 +382,8 @@ paths:
                 type: array 
                 items:
                   $ref: '#/components/schemas/Film'
+        '400':
+          $ref: '#/components/responses/BadRequest'
         '401':
            $ref: '#/components/responses/Unauthorized'
     post:
