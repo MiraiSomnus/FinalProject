@@ -313,7 +313,7 @@ paths:
                     $ref: '#/components/schemas/User'
           '401':
            $ref: '#/components/responses/Unauthorized'
-           
+
       put:
         security:
           - bearerAuth: []
@@ -339,6 +339,8 @@ paths:
             $ref: '#/components/responses/Forbidden'
           '404':
             $ref: '#/components/responses/NotFound'
+          '409':
+           $ref: '#/components/responses/DuplicateEmail'
 
       delete:
         security:
