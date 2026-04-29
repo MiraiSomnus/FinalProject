@@ -14,12 +14,12 @@ servers:
 tags:
   - name: Reviews
     description: Operations related to film reviews
-  - name: Users
-    description: Operations related to users
-  - name: Films
-    description: Operations related to films
   - name: Comments
     description: Operations related to comments
+  - name: Films
+    description: Operations related to films
+  - name: Users
+    description: Operations related to users
   - name: Auth 
     description: User authentication endpoints
   
@@ -196,7 +196,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Comment'
         '400':
-          $ref: '#/components/responses/InvalidPostInput'
+          $ref: '#/components/responses/BadRequest'
 
         '401':
           $ref: '#/components/responses/Unauthorized'

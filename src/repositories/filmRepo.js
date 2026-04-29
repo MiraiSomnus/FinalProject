@@ -18,6 +18,7 @@ export async function getAll({ releaseYear,search, sortBy, order, offset, limit 
     orderBy: { [sortBy]: order },
     take: limit,
     skip: offset,
+    omit: {adminId:true}
   });
   return films;
 }
