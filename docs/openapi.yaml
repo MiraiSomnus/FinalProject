@@ -322,7 +322,7 @@ paths:
         summary: Update Account Info 
         description: Update user Information such as email or password.
         requestBody:
-          description: Field to update user information.  "email" or "password" must be provided
+          description: Field to update user information.  "email" and "password" must be provided
           required: true
           content:
             application/json:
