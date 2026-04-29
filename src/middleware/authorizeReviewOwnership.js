@@ -1,4 +1,4 @@
-import { getReviewById } from "../services/ReviewService.js";
+import { getReviewById } from "../services/reviewService.js";
 
 export async function authorizeOwnership(req,res,next) {
     const id = parseInt(req.params.id);
